@@ -2,7 +2,47 @@
 
 @main("Welcome to Play 2.1") {
     <div id="content">
-        <div class="item">
+        @for(item <- models.Items.all(1)) {
+            <div class="item">
+                <div class="title">
+                    @item.title
+                </div>
+                <div class="image">
+                    <img src="@item.image" alt="@item.title" />
+                </div>
+                <div class="rating">
+                    @for(i <- 0 until item.rating) {
+                        <i class="icon-circle"></i>
+                    }
+                    @for(i <- item.rating until 5) {
+                        <i class="icon-circle-blank"></i>
+                    }
+                </div>
+                <div class="description">
+                    @item.description
+                </div>
+                <div class="social">
+                    <div class="button" style="border-right: 0; float: right;">
+                        <i class="icon-comments"></i>
+                        5
+                    </div>
+                    <div class="button" style="border-right: 0; float: right;">
+                        <i class="icon-chevron-up"></i>
+                        2
+                    </div>
+
+                    <div class="button" style="border-left: 0;">
+                        <i class="icon-comment"></i>
+                        Comment
+                    </div>
+                    <div class="button" style="border-left: 0;">
+                        <i class="icon-chevron-up"></i>
+                        Word up!
+                    </div>
+                </div>
+            </div>
+        }
+        @*<div class="item">
             <div class="title">
                 Gorbypuff Thunderhorse
             </div>
@@ -346,6 +386,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
     
 }

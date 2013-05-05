@@ -1,0 +1,14 @@
+# --- !Ups
+CREATE TABLE item (
+	id BIGINT AUTO_INCREMENT NOT NULL UNIQUE,
+	email VARCHAR(255) NOT NULL,
+	title VARCHAR(50) NOT NULL,
+	image VARCHAR(255),
+	rating TINYINT NOT NULL,
+	description VARCHAR(255),
+	list_id BIGINT NOT NULL,
+	CONSTRAINT pk_item PRIMARY KEY (id)
+);
+
+# --- !Downs
+DROP TABLE item;
