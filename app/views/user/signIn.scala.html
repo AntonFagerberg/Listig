@@ -1,0 +1,23 @@
+@main(Messages("listig")) {
+    <div class="box">
+        <div class="title">
+            Sign in
+        </div>
+        <div class="text">
+            <input
+                type="text"
+                title="@Messages("email")"
+                name="email"
+            />
+            <input
+                type="password"
+                title="password"
+                name="password"
+            />
+            <input
+                type="submit"
+                value="@Messages("signIn")"
+            >
+        </div>
+    </div>
+}

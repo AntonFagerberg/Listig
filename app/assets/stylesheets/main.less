@@ -2,6 +2,90 @@
 
 body {
   background: url('../images/furley_bg/furley_bg.png');
+  margin: 0;
+}
+
+@background-color: #333;
+@border: 1px solid #111;
+@text-color: #fff;
+@font-family-text: 'Donegal One', serif;
+
+.button-hover {
+  cursor: pointer;
+  background-color: #444;
+}
+
+.generic-title {
+  border: @border;
+  background-color: @background-color;
+  color: @text-color;
+  font-family: 'Swanky and Moo Moo', cursive;
+  @font-size: 24px;
+  font-size: @font-size;
+  line-height: @font-size;
+  text-align: center;
+  padding: 5px;
+  border-bottom: @border;
+}
+
+.box {
+  margin: 25px auto 0 auto;
+  width: 400px;
+  background-color: #fff;
+  border: @border;
+  font-family: @font-family-text;
+
+  .title {
+    .generic-title;
+  }
+
+  .text {
+    padding: 10px;
+  }
+
+  input[type=text], input[type=password] {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    font-family: @font-family-text;
+    font-size: 18px;
+
+    border: @border;
+    padding: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  input[type=submit], input[type=button] {
+    font-family: @font-family-text;
+    background-color: @background-color;
+    color: @text-color;
+    border: @border;
+    font-size: 18px;
+    padding: 3px;
+  }
+}
+
+#menu-top {
+  text-align: center;
+
+  a {
+    font-family: @font-family-text;
+    background-color: @background-color;
+    color: @text-color;
+    text-decoration: none;
+    margin-right: -4px;
+    padding: 7px 10px;
+    display: inline-block;
+    border-right: @border;
+    border-bottom: @border;
+    font-size: 18px;
+
+    &:hover {
+      .button-hover;
+    }
+  }
 }
 
 #content {
@@ -9,24 +93,15 @@ body {
 }
 
 .item {
-  @border: 1px solid #111;
   width: 300px;
   margin: 10px;
   border: @border;
-  background-color: #333;
-  color: #fff;
+  background-color: @background-color;
+  color: @text-color;
   float: left;
 
-  @font-family-text: 'Donegal One', serif;
-
   .title {
-    font-family: 'Swanky and Moo Moo', cursive;
-    @font-size: 24px;
-    font-size: @font-size;
-    line-height: @font-size;
-    text-align: center;
-    padding: 5px;
-    border-bottom: @border;
+    .generic-title;
   }
 
   .image {
@@ -77,9 +152,13 @@ body {
       border-left: @border;
 
       &:hover {
-        cursor: pointer;
-        background-color: #444;
+        .button-hover;
       }
     }
   }
+}
+
+.tipsy {
+  font-family: @font-family-text;
+  font-size: 18px;
 }
